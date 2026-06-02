@@ -1,9 +1,9 @@
 /* LAYOUT*/
 .wrapper{
     display: grid;
-    grid-template-rows: 140px 70.016px auto auto 60px;
-    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
-    font-family: 'PT Sans', sans-serif;
+    grid-template-rows: 140px 70.016px auto auto auto;
+    grid-template-columns: repeat(6, 1fr);
+    font-family: 'Calibri', sans-serif;
 }
 
 p{
