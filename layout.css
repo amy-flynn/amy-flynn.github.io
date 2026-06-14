@@ -88,6 +88,8 @@ hr{
     .main-nav,
     .header-socials{
         justify-self: center;
+        justify-content: center;
+        width: 100%;
     }
 
     .main-nav ul{
@@ -114,8 +116,8 @@ hr{
 .main-nav a{
     text-decoration:double;
     color: black;
-    font-family: 'Boldonse', serif;
-    font-size: small;
+    font-family: serif;
+    font-size: medium;
     letter-spacing: -.02em;
     line-height: .9;
     text-shadow: 0 2px 10px rgb(255, 255, 255);
@@ -128,6 +130,7 @@ hr{
 .header-socials{
     display: flex;
     gap: 15px;
+    align-items: center;
     justify-self: end;
 }
 
@@ -137,12 +140,14 @@ hr{
 
 .header-socials ion-icon{
     font-size: 1.7rem;
+      color: black;
+    transition: color .2s ease;
 }
 
-
-ion-icon{
-    color: black;
+.header-socials a:hover ion-icon{
+    color: white;
 }
+
 
 /*index*/
 .index-grid{
@@ -319,7 +324,9 @@ footer{
 
 .sectionheader{
     font-family: 'Rowdies', cursive;
-    font-size: medium;
+        font-size: 1.5rem;
+    letter-spacing: .08em;
+    margin: 0;
 }
 
 
@@ -381,63 +388,54 @@ footer{
 
 /*PORTFOLIO*/
 
-.category1{
-    display: grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    padding: 20px 20px 20px 20px;
-    overflow: hidden;
+.portfolio-layout{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.folder-heading{
+    display: flex;
     align-items: center;
-    text-align: center;
+    gap: 10px;
+      text-decoration: none;
+    color: inherit;
+
+    width: fit-content;
 }
-
-.category2{
-    display: grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 4;
-    grid-column-end: 7;
-    padding: 20px 20px 20px 20px;
-    overflow: hidden;
-    height: min-content;
-    align-items: center;
-    text-align: center;
-}
-
-
-a.button:link{
-    color: white;
-    font-family: 'Rowdies', cursive;
-    font-size: x-large;
-    background-color: #8daace;
-    border: 10px double black;
-    padding: 20px 20px;
-    text-align: center;
-    align-items: center;
-    filter: drop-shadow(.3rem .3rem 0.2rem #c7c7c7);
-    height: 100px;
-    line-height: 100px;
-    overflow: hidden;
-}
-
-a.button:visited{
-    text-decoration: underline;
-    border: 10px double black;
-    color: black;
-    background-color: #8daace;
-}
-
-a.button:hover{
-    background-color: #b0c3da;
-    color: black;
+.folder-heading:hover{
+    opacity: .8;
     cursor: pointer;
 }
 
-.description{
-    text-align: center;
-    padding: 20px;
+.folder-heading:hover ion-icon{
+    transform: translateY(-2px);
+}
+
+.folder-heading ion-icon{
+    font-size: 2rem;
+    color: #33423d;
+    transition: .2s;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    text-decoration: none;
+    color: inherit;
+
+    width: fit-content;
+    margin-left: 2rem;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-link ion-icon {
+    font-size: 1.2rem;
 }
 
 /*PORTFOLIO - GALLERIES*/
@@ -543,6 +541,7 @@ ul{
 }
  
 .home-nav {
+    font-family: serif;
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
