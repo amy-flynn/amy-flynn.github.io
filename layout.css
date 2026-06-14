@@ -152,7 +152,7 @@ hr{
     position: relative;
 }
 
-.dropdown-menu {
+.main-nav .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -517,6 +517,17 @@ footer{
 
 /*PORTFOLIO - GALLERIES*/
 
+.book-cover {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    object-fit: contain;
+}
+
+.RESgallery .book-cover-item {
+    flex-basis: 1000px;
+}
+
 .RESgallery{
     display: flex;
     flex-wrap: wrap;
@@ -568,10 +579,15 @@ ul{
 }
 
 .projectsummary{
-    background-color: #b0c3da;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
+    max-width: 1200px;
+    margin: 40px auto 25px;
+    padding: 22px 28px;
+
+    background-color: #eef3f1;
+    border-left: 8px solid #33423d;
+    border-radius: 4px;
+
+    text-align: left;
 }
 
 .RESgallery a:hover{
@@ -595,6 +611,14 @@ ul{
     text-align: center;
     margin-left:auto;
     margin-right: auto;
+}
+
+.top embed {
+    width: 100%;
+    max-width: 900px;
+    height: 900px;
+    display: block;
+    margin: 0 auto;
 }
 
 .bottom{
@@ -790,6 +814,7 @@ input{
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
+    justify-content: center;
   }
 
  
