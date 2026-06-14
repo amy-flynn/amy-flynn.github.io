@@ -13,16 +13,43 @@
     </head>
     <body>
         <div class="wrapper">
-            <header> <h1>AMY FLYNN</h1> </header>
-            <nav>
+          <header class="site-header">
+
+            <h1 class="site-name">AMY FLYNN</h1>
+
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="whoiam.html">Who I Am</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contactme.html">Contact Me</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="whoiam.html">ABOUT ME</a></li>
+                    <li class="dropdown">
+                        <a href="portfolio.html">PORTFOLIO</a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="pwtc.html">Documentation & Content Design</a></li>
+                            <li><a href="academicwriting.html">Academic Writing</a></li>
+                            <li><a href="graphicdesign.html">Graphic Design</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="resume.html">RESUME</a></li>
+                    <li><a href="contactme.html">CONTACT ME</a></li>
                 </ul>
             </nav>
+
+            <div class="header-socials">
+                <a title="Email link" href="mailto:acflynn44@gmail.com">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </a>
+
+                <a title="LinkedIn link" href="https://www.linkedin.com/in/amy-flynn-b97b76250/" target="_blank">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+
+                <a title="Contact form link" href="contactme.html">
+                    <ion-icon name="send-outline"></ion-icon>
+                </a>
+            </div>
+
+        </header>
             <main>
                 <h1>Graphic Design Samples</h1>
                 <div class="projectsummary">

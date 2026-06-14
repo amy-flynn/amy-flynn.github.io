@@ -148,6 +148,45 @@ hr{
     color: white;
 }
 
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    min-width: 200px;
+
+    background: white;
+    border: 1px solid lightgray;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+
+    z-index: 1000;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #d3ddd8;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 
 /*index*/
 .index-grid{
