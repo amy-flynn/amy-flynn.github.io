@@ -689,7 +689,6 @@ ul{
     border: none;
     box-shadow: none;
     padding: 0;
-    margin-bottom: 40px;
     
 }
 
@@ -749,7 +748,8 @@ ul{
 .homeicons{
     display: flex;
     gap: 25px;
-    padding: 0 60px;
+    padding: 0 60px 60px;
+    margin-top: auto;
 }
 
 
