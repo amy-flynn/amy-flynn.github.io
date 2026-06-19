@@ -194,17 +194,18 @@ hr{
     grid-template-columns: 38% 62%;
     min-height: 100vh;
     position:relative;
+    align-items: stretch;
 }
 
 .index-left-pane{
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
     background-color: #33423d;
     color: #000000;
 }
 
 .index-right-pane{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -749,7 +750,7 @@ ul{
     display: flex;
     gap: 25px;
     padding: 0 60px 60px;
-    margin-top: auto;
+    margin-top: 25px;
 }
 
 
