@@ -432,6 +432,20 @@ footer{
     flex-basis: 1000px;
 }
 
+.RESgallery img.pdf-preview {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border: 2px solid #33423d;
+    box-shadow: 4px 4px 0 #33423d;
+    transition: .2s;
+}
+
+.RESgallery img.pdf-preview:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+}
+
 .RESgallery{
     display: flex;
     flex-wrap: wrap;
