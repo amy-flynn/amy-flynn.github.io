@@ -797,6 +797,14 @@ input{
         padding-left: 15px;
         padding-right: 15px;
     }
+
+        .top embed {
+        height: 300px;
+        max-width: 250px;
+        border: 2px solid #33423d;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 main {
