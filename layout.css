@@ -785,6 +785,18 @@ input{
 
     body:not(.index) {
     background-color: white;
+
+        main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .content,
+    .about-layout,
+    .portfolio-layout {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 main {
