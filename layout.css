@@ -262,7 +262,9 @@ hr{
         grid-template-columns: 1fr;
     }
 
-    .index-left-pane {
+    .index-left-pane, 
+    .hero-text,
+    .mobile-headshot {
         display: none;
         
     }
