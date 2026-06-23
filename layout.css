@@ -793,7 +793,8 @@ input{
 
     .content,
     .about-layout,
-    .portfolio-layout {
+    .portfolio-layout
+    .projectsummary {
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -805,6 +806,12 @@ input{
         display: block;
         margin: 0 auto;
     }
+
+    @media (max-width: 800px) {
+    p {
+        line-height: 1.6;
+    }
+}
 }
 
 main {
