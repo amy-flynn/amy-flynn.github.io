@@ -753,16 +753,28 @@ input{
     }
 
     .main-nav ul{
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
+        gap: 12px;
+    }
+
+        .main-nav a {
+        font-size: clamp(0.65rem, 3vw, 0.95rem);
+        white-space: nowrap;
     }
 }
 
 @media (max-width: 800px) {
     .about-layout {
-        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+        align-items: center;
     }
-
+    .about-text {
+        width: 100%;
+        max-width: 420px;
+    }
     .about-gallery {
         width: 100%;
     }
