@@ -748,8 +748,9 @@ input{
     .main-nav,
     .header-socials{
         justify-self: center;
+        text-align: center;
         justify-content: center;
-        width: 100%;
+        width: auto;
     }
 
     .main-nav ul{
@@ -766,10 +767,13 @@ input{
 
 @media (max-width: 800px) {
     .about-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
         width: 100%;
         padding: 20px;
         margin: 0 auto;
-        align-items: center;
     }
     .about-text {
         width: 100%;
@@ -778,6 +782,14 @@ input{
     .about-gallery {
         width: 100%;
     }
+
+    body:not(.index) {
+    background-color: white;
+}
+
+main {
+    overflow-x: hidden;
+}
 }
 
 @media (max-width: 768px) {
