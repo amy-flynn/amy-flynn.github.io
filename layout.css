@@ -804,7 +804,8 @@ input{
     }
 
     body:not(.index) {
-    background-color: white;
+    background-color: white; 
+    }
 
         main {
         padding-left: 15px;
@@ -813,7 +814,7 @@ input{
 
     .content,
     .about-layout,
-    .portfolio-layout
+    .portfolio-layout,
     .projectsummary {
         padding-left: 15px;
         padding-right: 15px;
@@ -826,10 +827,9 @@ input{
     }
 
     .top embed {
-        width: 200px;
-        height: 260px;
-        margin: 0 auto;
-        display: block;
+    width: 150px;
+    aspect-ratio: 8.5 / 11;
+    height: auto;
     }
 
     .top a {
@@ -837,17 +837,16 @@ input{
         justify-content: center;
         width: 100%;
     }
+}
 
     @media (max-width: 800px) {
     p {
         line-height: 1.6;
     }
 }
-}
 
 main {
     overflow-x: hidden;
-}
 }
 
 @media (max-width: 768px) {
