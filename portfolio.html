@@ -50,6 +50,19 @@
 
         </header>
             <main>
+        <div class="portfolio-intro">
+            <h2>SELECTED WORK</h2>
+            <p class="filter-label">FILTER PROJECTS BY:</p>
+
+            <div class="portfolio-filters" aria-label="Filter portfolio projects">
+                <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">ALL</button>
+                <button class="filter-btn" type="button" data-filter="content" aria-pressed="false">TRAINING + CONTENT</button>
+                <button class="filter-btn" type="button" data-filter="ux" aria-pressed="false">UX + WEB</button>
+                <button class="filter-btn" type="button" data-filter="visual" aria-pressed="false">VISUAL DESIGN</button>
+                <button class="filter-btn" type="button" data-filter="research" aria-pressed="false">RESEARCH + DATA</button>
+            </div>
+        </div>
+
         <div class="portfolio-layout">
 
          <details class="category-folder" open>
@@ -67,7 +80,7 @@
 
                         <!-- CAMPAIGN WEBSITE -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="ux visual" data-tags="UX, Web Design, Visual Design" open>
 
                             <summary class="project-summary">
                                 <span
@@ -129,7 +142,7 @@
 
                         <!-- WORD MANUAL -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="content ux" data-tags="Instructional Design, Technical Writing, UX" open>
 
                             <summary class="project-summary">
                                 <span
@@ -225,7 +238,7 @@
 
                         <!-- ACCESSIBILITY RESOURCE -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="content ux" data-tags="Content Design, Accessibility, UX" open>
 
                             <summary class="project-summary">
                                 <span
@@ -296,7 +309,7 @@
                         </details>
                         <!-- GRANT PROPOSAL -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="content research" data-tags="Technical Writing, Research, Proposal Development" open>
 
                             <summary class="project-summary">
                                 <span
@@ -374,6 +387,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </details>
                             </div>
                         </details>
 
@@ -392,7 +406,7 @@
 
                         <!-- AI NOVEL -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="visual" data-tags="Production Design, InDesign, Typography" open>
 
                             <summary class="project-summary">
                                 <span
@@ -441,7 +455,7 @@
 
                         <!-- MAGAZINE SPREAD -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="visual" data-tags="Editorial Design, InDesign, Visual Hierarchy" open>
 
                             <summary class="project-summary">
                                 <span
@@ -494,7 +508,7 @@
 
                         <!-- Engagement Flyer -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="visual" data-tags="Visual Design, Print Design, Marketing" open>
 
                             <summary class="project-summary">
                                 <span
@@ -546,7 +560,7 @@
                         </details>
                         <!-- PALM CARDS -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="visual" data-tags="Print Design, Visual Design, Campaign Materials" open>
 
                             <summary class="project-summary">
                                 <span
@@ -595,11 +609,12 @@
                                     </div>
                                 </div>
                             </div>
+                        </details>
 
                             
                         <!-- Marketing Materials -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="visual" data-tags="Visual Design, Marketing, Layout" open>
 
                             <summary class="project-summary">
                                 <span
@@ -674,7 +689,7 @@
 
                         <!-- Capitalism in the Age of the Internet -->
 
-                        <details class="project-folder" open>
+                        <details class="project-folder" data-category="research content" data-tags="Research, Writing, Digital Culture" open>
 
                             <summary class="project-summary">
                                 <span
@@ -719,7 +734,7 @@
                             </div>
                         </details>
 
-                         <details class="project-folder" open>
+                         <details class="project-folder" data-category="research content" data-tags="Research, Writing, Technology Trends" open>
 
                             <summary class="project-summary">
                                 <span
@@ -764,7 +779,7 @@
                                 </div>
                             </div>
                         </details>
-                         <details class="project-folder" open>
+                         <details class="project-folder" data-category="research content" data-tags="Research, Writing, Technology Policy" open>
 
                             <summary class="project-summary">
                                 <span
@@ -809,7 +824,7 @@
                                 </div>
                             </div>
                         </details>
-                         <details class="project-folder" open>
+                         <details class="project-folder" data-category="research" data-tags="Python, Pandas, Data Visualization" open>
 
                             <summary class="project-summary">
                                 <span
@@ -871,6 +886,52 @@
 
            
     </div>
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project-folder');
+        const categories = document.querySelectorAll('.category-folder');
+
+        projects.forEach(project => {
+            const projectInfo = project.querySelector('.project-info');
+            const tags = (project.dataset.tags || '').split(',').filter(Boolean);
+
+            if (!projectInfo || !tags.length) return;
+
+            const tagList = document.createElement('div');
+            tagList.className = 'project-tags';
+            tagList.setAttribute('aria-label', 'Project skills');
+
+            tags.forEach(tag => {
+                const tagLabel = document.createElement('span');
+                tagLabel.textContent = tag.trim();
+                tagList.appendChild(tagLabel);
+            });
+
+            projectInfo.prepend(tagList);
+        });
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+
+                filterButtons.forEach(filterButton => {
+                    const isActive = filterButton === button;
+                    filterButton.classList.toggle('active', isActive);
+                    filterButton.setAttribute('aria-pressed', String(isActive));
+                });
+
+                projects.forEach(project => {
+                    const projectCategories = (project.dataset.category || '').split(' ');
+                    project.hidden = filter !== 'all' && !projectCategories.includes(filter);
+                });
+
+                categories.forEach(category => {
+                    const categoryProjects = [...category.querySelectorAll(':scope > .category-projects > .project-folder')];
+                    category.hidden = categoryProjects.length > 0 && !categoryProjects.some(project => !project.hidden);
+                });
+            });
+        });
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
